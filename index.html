@@ -3,9 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>VS Code-like Sidebar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    
+    <!-- Top Menu Bar -->
+    <div class="top-bar">
+        <div class="menu-bar">
+            <div class="menu-item">
+                File
+                <div class="dropdown-menu">
+                    <div class="menu-option"><span>New File</span><span class="shortcut">Ctrl+N</span></div>
+                    <div class="menu-option"><span>New Window</span><span class="shortcut">Ctrl+Shift+N</span></div>
+                    <div class="menu-separator"></div>
+                    <div class="menu-option"><span>Open File...</span><span class="shortcut">Ctrl+O</span></div>
+                    <div class="menu-option"><span>Open Folder...</span><span class="shortcut">Ctrl+K Ctrl+O</span></div>
+                    <div class="menu-separator"></div>
+                    <div class="menu-option"><span>Save</span><span class="shortcut">Ctrl+S</span></div>
+                    <div class="menu-option"><span>Save As...</span><span class="shortcut">Ctrl+Shift+S</span></div>
+                </div>
+            </div>
+            <div class="menu-item">
+                Edit
+                <div class="dropdown-menu">
+                    <div class="menu-option"><span>Undo</span><span class="shortcut">Ctrl+Z</span></div>
+                    <div class="menu-option"><span>Redo</span><span class="shortcut">Ctrl+Y</span></div>
+                    <div class="menu-separator"></div>
+                    <div class="menu-option"><span>Cut</span><span class="shortcut">Ctrl+X</span></div>
+                    <div class="menu-option"><span>Copy</span><span class="shortcut">Ctrl+C</span></div>
+                    <div class="menu-option"><span>Paste</span><span class="shortcut">Ctrl+V</span></div>
+                </div>
+            </div>
+            <div class="menu-item">
+                View
+                <div class="dropdown-menu">
+                    <div class="menu-option"><span>Command Palette...</span><span class="shortcut">Ctrl+Shift+P</span></div>
+                    <div class="menu-separator"></div>
+                    <div class="menu-option"><span>Explorer</span><span class="shortcut">Ctrl+Shift+E</span></div>
+                    <div class="menu-option"><span>Search</span><span class="shortcut">Ctrl+Shift+F</span></div>
+                    <div class="menu-option"><span>Source Control</span><span class="shortcut">Ctrl+Shift+G</span></div>
+                </div>
+            </div>
+            <div class="menu-item">
+                Run
+                <div class="dropdown-menu">
+                    <div class="menu-option"><span>Start Debugging</span><span class="shortcut">F5</span></div>
+                    <div class="menu-option"><span>Run Without Debugging</span><span class="shortcut">Ctrl+F5</span></div>
+                    <div class="menu-separator"></div>
+                    <div class="menu-option"><span>Toggle Breakpoint</span><span class="shortcut">F9</span></div>
+                </div>
+            </div>
+            <div class="menu-item">
+                Help
+                <div class="dropdown-menu">
+                    <div class="menu-option"><span>Welcome</span></div>
+                    <div class="menu-option"><span>Documentation</span></div>
+                    <div class="menu-separator"></div>
+                    <div class="menu-option"><span>About</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Sidebar with icons -->
+        <div class="activity-bar">
+            <div class="sidebar-icons">
+                <div class="icon active" data-tab="explorer">
+                    <i class="fas fa-folder"></i>
+                </div>
+                <div class="icon" data-tab="search">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="icon" data-tab="git">
+                    <i class="fas fa-code-branch"></i>
+                </div>
+                <div class="icon" data-tab="debug">
+                    <i class="fas fa-bug"></i>
+                </div>
+                <div class="icon" data-tab="extensions">
+                    <i class="fas fa-puzzle-piece"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar content -->
+        <div class="sidebar">
+            <div class="sidebar-content active" id="explorer">
+                <h3>EXPLORER</h3>
+                <div class="tree-view">
+                    <div class="folder">
+                        <span><i class="fas fa-chevron-right"></i> Project</span>
+                        <div class="files">
+                            <div class="file"><i class="fas fa-file-code"></i> index.html</div>
+                            <div class="file"><i class="fas fa-file-code"></i> style.css</div>
+                            <div class="file"><i class="fas fa-file-code"></i> script.js</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-content" id="search">
+                <h3>SEARCH</h3>
+                <div class="search-container">
+                    <input type="text" placeholder="Search...">
+                </div>
+            </div>
+            <div class="sidebar-content" id="git">
+                <h3>SOURCE CONTROL</h3>
+                <p>No changes</p>
+            </div>
+            <div class="sidebar-content" id="debug">
+                <h3>RUN AND DEBUG</h3>
+                <p>No active debug session</p>
+            </div>
+            <div class="sidebar-content" id="extensions">
+                <h3>EXTENSIONS</h3>
+                <div class="search-container">
+                    <input type="text" placeholder="Search extensions...">
+                </div>
+            </div>
+        </div>
+
+        <!-- Main content area -->
+        <div class="main-content">
+            <h1>Main Content Area</h1>
+            <p>Your content goes here</p>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
